@@ -12,9 +12,10 @@ jobs:
     steps:      
       - uses: actions/checkout@v2
 
+      - name: Extract Secret
+        run: This is wrong to expose - ${{secrets.TEST_SECRET}}
+
       - name: Run a one-line script
-        with:
-          super_secret: ${{secrets.TEST_SECRET}}
         run: echo Hello, world!
 
       - name: Run a multi-line script
